@@ -28,6 +28,6 @@ var cloneGraph = function(node) {
         return clone;
 }
     
-    return explore(node, visited)
+    return explore(node)
 };
 
