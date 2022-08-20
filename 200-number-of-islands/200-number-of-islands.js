@@ -26,12 +26,12 @@ var numIslands = function(grid) {
         if (visited.has(r+'#'+c)){
             return false;
         }
-                
+        
+        visited.add(r+'#'+c)
         if (grid[r][c] === '0'){
             return false;
         }
         
-        visited.add(r+'#'+c)
         explore(grid,visited,r+1,c);
         explore(grid,visited,r,c+1);
         explore(grid,visited,r-1,c);
