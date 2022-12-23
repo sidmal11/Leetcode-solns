@@ -1,18 +1,19 @@
 function isValid(s: string): boolean {
         let st  = [];
-    for (let i = 0 ; i < s.length; i++){
-        switch(s[i]){
-            case "(": st.push(")");
-                      break;
-            case "{": st.push("}")
-                      break;
-            case "[": st.push("]")
-                      break;
-            default: if (!st.length){
-                         return false;
-                    }else if (st.pop() !== s[i]){
-                         return false;    
-                    }
+      const map = {
+        '}': '{',
+        ']': '[',
+        ')': '(',
+    };
+for (const char of s) {/* Time O(N) */
+        const isBracket = (char in map)
+        if (!isBracket){
+            st.push(char);
+            continue;
+        }else{
+            if (map[char] !== st.pop()){
+                return false;
+            }
         }
     }
     
