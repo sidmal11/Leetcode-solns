@@ -18,8 +18,6 @@ class MinStack {
             }
         }
 
-console.log(this.minstack);
-console.log(this.stack);
 
     }
 
